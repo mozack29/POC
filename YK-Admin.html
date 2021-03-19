@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>HEllo</title>
+</head>
+<body style="height:100%;">
+<script src="https://admin-fts.threekit.com/app/js/threekit-player.js"></script>
+<div id="playerContainer" style="height:100%;"</div>
+<script>
+const authToken='a931b277-9d68-4276-a09a-874ffa51fcc3';
+const assetId='c26a41b2-8b3e-4b1b-8858-771c0e7481dd';
+const stageID='35b095a4-33b6-4d9b-a5fd-8bb8356b1170';
+
+window
+.threekitPlayer({
+authToken,
+el: document.getElementById('playerContainer'),
+assetId,
+intialConfiguration: {},
+showConfigurator: true,
+stageId: stageID,
+showAR: true,
+})
+.then(api =>{
+window.api=api;
+
+}
+);
+</script>
+
+</body>
+</html>
