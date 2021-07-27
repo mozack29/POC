@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>HEllo</title>
+</head>
+<body style="height:100%;">
+<script src="https://preview.threekit.com/app/js/threekit-player.js"></script>
+<div id="playerContainer" style="height:400px; width:400px;"</div>
+<script>
+const authToken='8424166a-90f5-4fc7-b94d-ab4bf0d67e74';
+const assetId='ed0da539-7764-4eea-80ef-1da2f56ce510';
+
+window
+.threekitPlayer({
+authToken,
+el: document.getElementById('playerContainer'),
+assetId,
+intialConfiguration: {},
+showConfigurator: true,
+showAR: true,
+//display: 'image',
+})
+.then(async api =>{
+window.api=api;
+window.configurator = await api.getConfigurator();
+api=api.enableApi('player');
+api.tools.removeTool('pan');
+api.tools.removeTool('orbit');
+
+}
+);
+</script>
+
+</body>
+</html>
