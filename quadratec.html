@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Plunge</title>
+	<script src="https://preview.threekit.com/app/js/threekit-player.js"></script>
+</head>
+<body style="height:100%;">
+
+
+<div id="playerContainer" style="height:500px; width=500px"></div>
+
+<script>
+
+const authToken='de5cae82-99dc-4399-8595-863aff1a484b';
+const assetId='31cf5714-8ad3-4d0d-8198-e5add0fe5285';
+//'f53483db-5fe7-45dd-ac31-bc06478213b7';//'f357919f-927f-4e57-8bcb-f0c5f2080404';
+
+
+window
+.threekitPlayer({
+authToken,
+el: document.getElementById('playerContainer'),
+assetId,
+intialConfiguration: {},
+showConfigurator: true,
+locale: "EN",
+showAR: true,
+display : '3D',
+})
+.then(async api =>{
+window.api=api;
+window.configurator = await api.getConfigurator();
+
+}
+); 
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
