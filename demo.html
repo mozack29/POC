@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+
+    <style>
+      html,
+      body,
+      #player {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="player"></div>
+    <script src="https://preview.threekit.com/app/js/threekit-player.js"></script>
+    <script>
+      var annotationElements = {};
+      var opened = {};
+      var lastAnnotations;
+      var lastParentEl;
+
+      function onAnnotationChange(annotations, parentEl) {
+        lastAnnotations = annotations;
+        lastParentEl = parentEl;
+
+        if (!parentEl) {
+          return;
+        }
+
+        for (var i = 0; i < annotations.length; i++) {
+          var annotation = annotations[i];
+
+          var element = annotationElements[annotation.id];
+          var appendToBody = !element;
+
+          element = setAnnotation(annotation, element);
+
+          if (!appendToBody) {
+            continue;
+          }
+
+          parentEl.appendChild(element);
+          annotationElements[annotation.id] = element;
+        }
+      }
+
+      function setAnnotation(annotation, el = document.createElement('span')) {
+        el.setAttribute(
+          'style',
+          'position: absolute; width: 32px; height: 32px; transform: translate(-50%, -50%); border-radius: 50%; left: ' +
+            annotation.left +
+            'px; top: ' +
+            annotation.top +
+            'px; background-color: ' +
+            (opened[annotation.id] ? 'cyan;' : 'blue;') +
+            ' display: ' +
+            (annotation.visible ? 'block;' : 'none;')
+        );
+
+        var contentEl = el.children[0];
+
+        if (opened[annotation.id]) {
+          if (!contentEl) {
+            contentEl = document.createElement('div');
+            el.appendChild(contentEl);
+          }
+        } else {
+          if (Array.from(el.children).includes(contentEl)) {
+            el.removeChild(contentEl);
+          }
+        }
+
+        if (contentEl) {
+          contentEl.setAttribute(
+            'style',
+            'width: 400px; background-color: lightgrey; color: black; position: absolute; top: 0; padding: 6px; left: 40px;'
+          );
+          contentEl.innerHTML = annotation.text;
+        }
+
+        el.onclick = () => {
+          const open = !opened[annotation.id];
+          opened[annotation.id] = open;
+          if (open) {
+            for (const otherAnnotation of lastAnnotations) {
+              if (otherAnnotation.id === annotation.id) continue;
+              opened[otherAnnotation.id] = false;
+            }
+          }
+          onAnnotationChange(lastAnnotations, lastParentEl);
+        };
+
+        return el;
+      }
+
+      var playerEl = document.getElementById('player');
+      const options = {
+        el: playerEl,
+          assetId: '345c9e07-4cfe-4ec9-8374-d239273dddd2',
+        authToken: '733d0e5d-f35f-472a-8490-032dfc070195',
+        onAnnotationChange,
+      };
+      threekitPlayer(options).then(async (player) => {
+        window.player = player;
+      });
+    </script>
+  </body>
+</html>
