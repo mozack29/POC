@@ -15,7 +15,7 @@ const options = {
 
 options.body = form;
 
-fetch('https://preview.threekit.com/api/filesd?bearer_token=db37753f-5fe7-4648-b7ba-ed329b836816', options)
+fetch('https://preview.threekit.com/api/files?bearer_token=db37753f-5fe7-4648-b7ba-ed329b836816', options)
   .then(response => response.json())
   .then(response => console.log(response))
   .catch(err => console.error(err));
