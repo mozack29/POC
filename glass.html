@@ -1,30 +1,48 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><link rel="icon" href="%PUBLIC_URL%/favicon.ico"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0"><meta name="description" content="Threekit - UI Builder"><link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.ico"><title>Francis | Glass Top Configurator</title></head>
-  <script>
-    function hello()
-    {
-    const form = new FormData();
-form.append('file', 'data:text/plain;name=treble-app.js.LICENSE.txt;base64,LyohCglDb3B5cmlnaHQgKGMpIDIwMTggSmVkIFdhdHNvbi4KCUxpY2Vuc2VkIHVuZGVyIHRoZSBNSVQgTGljZW5zZSAoTUlUKSwgc2VlCglodHRwOi8vamVkd2F0c29uLmdpdGh1Yi5pby9jbGFzc25hbWVzCiovCgovKiEKICogVGhlIGJ1ZmZlciBtb2R1bGUgZnJvbSBub2RlLmpzLCBmb3IgdGhlIGJyb3dzZXIuCiAqCiAqIEBhdXRob3IgICBGZXJvc3MgQWJvdWtoYWRpamVoIDxodHRwczovL2Zlcm9zcy5vcmc+CiAqIEBsaWNlbnNlICBNSVQKICovCgovKiEgaWVlZTc1NC4gQlNELTMtQ2xhdXNlIExpY2Vuc2UuIEZlcm9zcyBBYm91a2hhZGlqZWggPGh0dHBzOi8vZmVyb3NzLm9yZy9vcGVuc291cmNlPiAqLwoKLyohIHJlZ2VuZXJhdG9yLXJ1bnRpbWUgLS0gQ29weXJpZ2h0IChjKSAyMDE0LXByZXNlbnQsIEZhY2Vib29rLCBJbmMuIC0tIGxpY2Vuc2UgKE1JVCk6IGh0dHBzOi8vZ2l0aHViLmNvbS9mYWNlYm9vay9yZWdlbmVyYXRvci9ibG9iL21haW4vTElDRU5TRSAqLwoKLyoqCiAqIEBsaWNlbnNlIFJlYWN0CiAqIHJlYWN0LWRvbS5wcm9kdWN0aW9uLm1pbi5qcwogKgogKiBDb3B5cmlnaHQgKGMpIEZhY2Vib29rLCBJbmMuIGFuZCBpdHMgYWZmaWxpYXRlcy4KICoKICogVGhpcyBzb3VyY2UgY29kZSBpcyBsaWNlbnNlZCB1bmRlciB0aGUgTUlUIGxpY2Vuc2UgZm91bmQgaW4gdGhlCiAqIExJQ0VOU0UgZmlsZSBpbiB0aGUgcm9vdCBkaXJlY3Rvcnkgb2YgdGhpcyBzb3VyY2UgdHJlZS4KICovCgovKioKICogQGxpY2Vuc2UgUmVhY3QKICogcmVhY3QtanN4LXJ1bnRpbWUucHJvZHVjdGlvbi5taW4uanMKICoKICogQ29weXJpZ2h0IChjKSBGYWNlYm9vaywgSW5jLiBhbmQgaXRzIGFmZmlsaWF0ZXMuCiAqCiAqIFRoaXMgc291cmNlIGNvZGUgaXMgbGljZW5zZWQgdW5kZXIgdGhlIE1JVCBsaWNlbnNlIGZvdW5kIGluIHRoZQogKiBMSUNFTlNFIGZpbGUgaW4gdGhlIHJvb3QgZGlyZWN0b3J5IG9mIHRoaXMgc291cmNlIHRyZWUuCiAqLwoKLyoqCiAqIEBsaWNlbnNlIFJlYWN0CiAqIHJlYWN0LnByb2R1Y3Rpb24ubWluLmpzCiAqCiAqIENvcHlyaWdodCAoYykgRmFjZWJvb2ssIEluYy4gYW5kIGl0cyBhZmZpbGlhdGVzLgogKgogKiBUaGlzIHNvdXJjZSBjb2RlIGlzIGxpY2Vuc2VkIHVuZGVyIHRoZSBNSVQgbGljZW5zZSBmb3VuZCBpbiB0aGUKICogTElDRU5TRSBmaWxlIGluIHRoZSByb290IGRpcmVjdG9yeSBvZiB0aGlzIHNvdXJjZSB0cmVlLgogKi8KCi8qKgogKiBAbGljZW5zZSBSZWFjdAogKiBzY2hlZHVsZXIucHJvZHVjdGlvbi5taW4uanMKICoKICogQ29weXJpZ2h0IChjKSBGYWNlYm9vaywgSW5jLiBhbmQgaXRzIGFmZmlsaWF0ZXMuCiAqCiAqIFRoaXMgc291cmNlIGNvZGUgaXMgbGljZW5zZWQgdW5kZXIgdGhlIE1JVCBsaWNlbnNlIGZvdW5kIGluIHRoZQogKiBMSUNFTlNFIGZpbGUgaW4gdGhlIHJvb3QgZGlyZWN0b3J5IG9mIHRoaXMgc291cmNlIHRyZWUuCiAqLwoKLyoqIEBsaWNlbnNlIFJlYWN0IHYxNi4xMy4xCiAqIHJlYWN0LWlzLnByb2R1Y3Rpb24ubWluLmpzCiAqCiAqIENvcHlyaWdodCAoYykgRmFjZWJvb2ssIEluYy4gYW5kIGl0cyBhZmZpbGlhdGVzLgogKgogKiBUaGlzIHNvdXJjZSBjb2RlIGlzIGxpY2Vuc2VkIHVuZGVyIHRoZSBNSVQgbGljZW5zZSBmb3VuZCBpbiB0aGUKICogTElDRU5TRSBmaWxlIGluIHRoZSByb290IGRpcmVjdG9yeSBvZiB0aGlzIHNvdXJjZSB0cmVlLgogKi8KCi8qKiBAbGljZW5zZSBSZWFjdCB2MTcuMC4yCiAqIHJlYWN0LWlzLnByb2R1Y3Rpb24ubWluLmpzCiAqCiAqIENvcHlyaWdodCAoYykgRmFjZWJvb2ssIEluYy4gYW5kIGl0cyBhZmZpbGlhdGVzLgogKgogKiBUaGlzIHNvdXJjZSBjb2RlIGlzIGxpY2Vuc2VkIHVuZGVyIHRoZSBNSVQgbGljZW5zZSBmb3VuZCBpbiB0aGUKICogTElDRU5TRSBmaWxlIGluIHRoZSByb290IGRpcmVjdG9yeSBvZiB0aGlzIHNvdXJjZSB0cmVlLgogKi8K');
-form.append("orgId", 'ee9a671d-b38e-4812-b635-242f7c54445a');
-const options = {
-  method: 'POST',
-  headers: {
-    accept: 'application/json',
-    authorization: 'Bearer db37753f-5fe7-4648-b7ba-ed329b836816'
-  }
-};
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <button onclick="xyz()">click</button>
 
-options.body = form;
+      <input type="file" id="fileinput" />
+    </div>
 
-fetch('https://preview.threekit.com/api/files?bearer_token=db37753f-5fe7-4648-b7ba-ed329b836816', options)
-  .then(response => response.json())
-  .then(response => console.log(response))
-  .catch(err => console.error(err));
-    
-    }
-  </script>
-  <body onload="hello()"><noscript>You need to enable JavaScript to run this app.</noscript>
+    <script>
+      function xyz() {
+        const form = new FormData();
 
-  
-  
-  
-  </body></html>
+        let files = document.getElementById("fileinput");
+
+        console.log(files.files[0]);
+
+        form.append("file", files.files[0]);
+        form.append("orgId", 'ee9a671d-b38e-4812-b635-242f7c54445a');
+        const options = {
+          method: "POST",
+          headers: {
+            accept: "application/json",
+            authorization: "Bearer db37753f-5fe7-4648-b7ba-ed329b836816",
+          },
+        };
+
+        options.body = form;
+
+        fetch("https://preview.threekit.com/api/files?bearer_token=db37753f-5fe7-4648-b7ba-ed329b836816", options)
+          .then((response) => response.json())
+          .then((response) => {
+            console.log(response, response.files[0].id);
+
+            let url = `https://preview.threekit.com/api/files/${response.files[0].id}/content`;
+            console.log("urll", url);
+          })
+          .catch((err) => console.error(err));
+      }
+    </script>
+  </body>
+</html>
